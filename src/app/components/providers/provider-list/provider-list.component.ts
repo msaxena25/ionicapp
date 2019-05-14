@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IonInfiniteScroll } from '@ionic/angular';
 
 @Component({
   selector: 'app-provider-list',
@@ -7,8 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProviderListComponent implements OnInit {
   data: any = {};
+  providerList: any;
 
-  constructor() { }
+  constructor() { 
+    this.providerList = [1,2,3,4,5];
+  }
 
   ngOnInit() {
     this.data = {
@@ -20,12 +24,26 @@ export class ProviderListComponent implements OnInit {
 
   }
 
+  loadData($event) {
+
+    setTimeout(() => {
+      this.providerList.push(6);
+      $event.target.complete();
+     // $event.target.disabled = true;
+    }, 2000);
+
+  }
+
+  onClickItem($event) {
+    debugger;
+  }
+
   onRatingChange() {
 
   }
 
   doCall() {
-    
+
   }
 
 
