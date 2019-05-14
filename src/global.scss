@@ -1,0 +1,39 @@
+// http://ionicframework.com/docs/theming/
+@import '~@ionic/angular/css/core.css';
+@import '~@ionic/angular/css/normalize.css';
+@import '~@ionic/angular/css/structure.css';
+@import '~@ionic/angular/css/typography.css';
+@import '~@ionic/angular/css/display.css';
+@import '~@ionic/angular/css/padding.css';
+@import '~@ionic/angular/css/float-elements.css';
+@import '~@ionic/angular/css/text-alignment.css';
+@import '~@ionic/angular/css/text-transformation.css';
+@import '~@ionic/angular/css/flex-utils.css';
+
+ion-grid {
+    width: 100%;
+}
+:root {
+    //--ion-color-primary: transparent;
+    --highlight-color-focused: transparent;
+    
+}
+
+:host {
+  //  --highlight-color-focused: var(--ion-color-success,#10dc60);
+    //--highlight-color-invalid: var(--ion-color-success,#10dc60);
+    
+    /* Set the background of the entire app */
+  //  --ion-background-color: #ff3700;
+  
+    /* Set the font family of the entire app */
+    --ion-font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Roboto", sans-serif;
+  }
+
+  .my-custom-class{
+    --background: #FFDB22;
+    --color:#FF3F22;
+    --border-style:solid;
+    --border-width :5px;
+    --border-color:#FF3F22;
+}
