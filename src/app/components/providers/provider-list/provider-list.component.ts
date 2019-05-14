@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IonInfiniteScroll } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-provider-list',
@@ -10,7 +11,7 @@ export class ProviderListComponent implements OnInit {
   data: any = {};
   providerList: any;
 
-  constructor() { 
+  constructor(private router: Router) { 
     this.providerList = [1,2,3,4,5];
   }
 
@@ -35,7 +36,22 @@ export class ProviderListComponent implements OnInit {
   }
 
   onClickItem($event) {
-    debugger;
+    
+    let el = this.getParentElement($event.target);
+    this.router.navigateByUrl('/provider-profile'); // need to create a new page for provider-portfolio
+    // play will el now we have id and we can item from provider list or we can hit request to get data
+
+  }
+
+  
+ // get parent element ion-item based on target element
+  getParentElement(el){
+    while(el.parentElement){
+        el =  el.parentElement;
+        if(el.tagName === 'ION-ITEM' && el.id) {
+            return el;
+        }
+    }
   }
 
   onRatingChange() {
