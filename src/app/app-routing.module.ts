@@ -11,6 +11,10 @@ const routes: Routes = [
     component: ProviderLoginComponent
   },
   {
+    path: 'provider-list',
+   loadChildren: './components/providers/provider-list/provider-list.module#ProviderListModule'
+  },
+  {
     path: 'provider-register',
    loadChildren: './components/providers/provider-register/provider-register.module#ProviderRegisterModule'
   },
