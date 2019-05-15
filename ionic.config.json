@@ -1,5 +1,7 @@
 {
   "name": "goman",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
