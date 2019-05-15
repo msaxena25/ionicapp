@@ -15,6 +15,7 @@ import { HomePageModule } from './home/home.module';
 import { ProviderRegisterModule } from './components/providers/provider-register/provider-register.module';
 import { FormsModule } from '@angular/forms';
 import { ProviderListModule } from './components/providers/provider-list/provider-list.module';
+import { ProviderSearchModule } from './components/users/provider-search/provider-search.module';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { ProviderListModule } from './components/providers/provider-list/provide
     ProviderRegisterModule,
     HomePageModule,
     FormsModule,
-    ProviderListModule
+    ProviderListModule,
+    ProviderSearchModule
   ],
   providers: [
     StatusBar,
