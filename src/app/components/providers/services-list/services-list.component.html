@@ -10,11 +10,15 @@
 <ion-content>
   <ion-item-sliding *ngFor="let i of servicesArr">
 
-    <ion-item >
+    <ion-item>
       <ion-grid>
         <ion-row>
           <ion-col>
             <ion-label>{{i.service}}</ion-label>
+            <ion-select placeholder="Select services">
+              <ion-select-option value="AC Repair">AC Repair</ion-select-option>
+              <ion-select-option value="Chimney Repair">Chimney Repair</ion-select-option>
+            </ion-select>
           </ion-col>
           <ion-col size="4">
             <ion-input maxlength="3" class="amount-border" type="text" placeholder="amount" [(ngModel)]="i.amount">
