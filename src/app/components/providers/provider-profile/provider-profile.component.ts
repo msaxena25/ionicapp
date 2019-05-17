@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastService } from 'src/app/shared/services/toast.service';
+import { AppMessage } from 'src/app/shared/app-message.enum';
 
 @Component({
   selector: 'app-provider-profile',
@@ -43,7 +44,7 @@ export class ProviderProfileComponent implements OnInit {
     this.profileForm.disable();
   }
   onSaveProfile() {
-    this.toastService.presentToast();
+    this.toastService.presentToast(AppMessage.U1001);
     this.profileForm.disable();
   }
   onEdit() {

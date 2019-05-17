@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastService } from 'src/app/shared/services/toast.service';
+import { AppMessage } from 'src/app/shared/app-message.enum';
 
 @Component({
   selector: 'app-provider-login',
@@ -8,9 +10,9 @@ import { Router } from '@angular/router';
 })
 export class ProviderLoginComponent implements OnInit {
 
-  constructor(private router : Router) { }
+  constructor(private router: Router, private toastService: ToastService) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   onNewRegister() {
     this.router.navigateByUrl('/provider-register');
@@ -18,7 +20,10 @@ export class ProviderLoginComponent implements OnInit {
   }
 
   onLogin() {
-    
+    this.toastService.presentToast(AppMessage.U1004);
+    this.router.navigateByUrl('/provider-profile');
+
+
   }
 
 }

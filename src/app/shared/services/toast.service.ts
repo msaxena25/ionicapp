@@ -8,9 +8,9 @@ export class ToastService {
 
   constructor(private toastController : ToastController) { }
 
-  async presentToast() {
+  async presentToast(message: string) {
     const toast = await this.toastController.create({
-      message: 'Your settings have been saved.',
+      message: message,
       duration: 2000,
       position: 'bottom',
     //  cssClass:"my-custom-class",

@@ -8,14 +8,16 @@
 </ion-header>
 
 <ion-content>
-  <ion-item-sliding *ngFor="let i of servicesArr">
+  <ion-item-sliding *ngFor="let i of servicesArr;let index = index;">
 
     <ion-item>
       <ion-grid>
         <ion-row>
-          <ion-col>
-            <ion-label>{{i.service}}</ion-label>
-            <ion-select placeholder="Select services">
+          <ion-col size="8">
+            <ion-label (click)="onClickService(index)">{{i.service}}</ion-label>
+            
+            <ion-select *ngIf="showSelect[index]" #mySelect placeholder="Select services">
+                <!-- <ion-select-option value="">Add New One..</ion-select-option>  -->
               <ion-select-option value="AC Repair">AC Repair</ion-select-option>
               <ion-select-option value="Chimney Repair">Chimney Repair</ion-select-option>
             </ion-select>

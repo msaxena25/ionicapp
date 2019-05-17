@@ -1,12 +1,25 @@
 <ion-header>
   <ion-toolbar>
-    <ion-buttons slot="start">
+    <ion-buttons  >
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>Search</ion-title>
+    <ion-title>Search Services</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content padding>
-  <ion-input type="text" placeholder="enter your location / area"></ion-input>
-  
+  <ion-item>
+    <ion-input type="text" placeholder="enter your location / area"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-select #mySelect placeholder="Select services">
+      <ion-select-option value="AC Repair">AC Repair</ion-select-option>
+      <ion-select-option value="Chimney Repair">Chimney Repair</ion-select-option>
+    </ion-select>
+  </ion-item>
+
 </ion-content>
+
+
+<ion-footer>
+  <ion-button expand="full" color="primary" (click)="onSearch()">Search</ion-button>
+</ion-footer>
