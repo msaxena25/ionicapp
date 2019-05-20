@@ -16,6 +16,8 @@ import { ProviderRegisterModule } from './components/providers/provider-register
 import { FormsModule } from '@angular/forms';
 import { ProviderListModule } from './components/providers/provider-list/provider-list.module';
 import { ProviderSearchModule } from './components/users/provider-search/provider-search.module';
+import { AreaModule } from './components/providers/area/area.module';
+import { ProviderHomeModule } from './components/providers/provider-home/provider-home.module';
 
 
 @NgModule({
@@ -30,7 +32,9 @@ import { ProviderSearchModule } from './components/users/provider-search/provide
     HomePageModule,
     FormsModule,
     ProviderListModule,
-    ProviderSearchModule
+    ProviderSearchModule,
+    ProviderHomeModule,
+    AreaModule
   ],
   providers: [
     StatusBar,
