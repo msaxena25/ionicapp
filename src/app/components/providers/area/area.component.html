@@ -7,11 +7,12 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
   <ion-item-sliding *ngFor="let item of locationArr;let index = index;">
 
     <ion-item>
-      <ion-input [readonly]= "item.isReadonly" maxlength="100" type="text" placeholder="enter service area" [(ngModel)]="item.location"> </ion-input>
+      <ion-input [readonly]="item.isReadonly" maxlength="100" type="text" placeholder="enter service area"
+        [(ngModel)]="item.location"> </ion-input>
     </ion-item>
     <ion-item-options side="end">
       <ion-item-option (click)="onRemoveItem(index)">Remove</ion-item-option>
@@ -19,15 +20,28 @@
     </ion-item-options>
   </ion-item-sliding>
 
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button (click)="onAddLocation()">
-      <ion-icon name="add"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
+
 </ion-content>
 
+<ion-footer>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-row>
+      <ion-col size="6">
+        <ion-fab-button (click)="onAddLocation()">
+          <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+      </ion-col>
+      <ion-col size="6">
+        <ion-fab-button (click)="onSaveLocation()">
+          <ion-icon name="document"></ion-icon>
+        </ion-fab-button>
+      </ion-col>
+    </ion-row>
+  </ion-fab>
+</ion-footer>
 
+<!-- 
 
 <ion-footer>
   <ion-button expand="full" color="primary" (click)="onSaveLocation()">Save</ion-button>
-</ion-footer>
+</ion-footer> -->

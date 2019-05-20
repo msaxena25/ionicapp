@@ -5,20 +5,20 @@
 			<ion-back-button></ion-back-button>
 		</ion-buttons>
 		<ion-title>My Profile</ion-title>
-		<ion-icon  class="active-btn" slot="end"  name="radio-button-on" (click)="onActive()"></ion-icon>
-		<ion-icon class="edit-btn" slot="end" name="brush" (click)="onEdit()"></ion-icon>
+		<ion-icon class="active-btn" slot="end" name="radio-button-on" (click)="onActive()"></ion-icon>
+		<!-- <ion-icon class="edit-btn" slot="end" name="brush" (click)="onEdit()"></ion-icon> -->
 	</ion-toolbar>
 </ion-header>
 
 
-<ion-content>
+<ion-content padding>
 	<form [formGroup]="profileForm">
 		<ion-list>
 			<ion-item>
 				<ion-avatar>
 					<img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
 				</ion-avatar>
-				<ion-label >{{data.name}}</ion-label>
+				<ion-label>{{data.name}}</ion-label>
 			</ion-item>
 
 			<ion-item>
@@ -26,9 +26,9 @@
 				<ion-input type="text" formControlName="userName"></ion-input>
 			</ion-item>
 			<ion-item>
-					<ion-label position="floating">Name</ion-label>
-					<ion-input type="text" formControlName="name"></ion-input>
-				</ion-item>
+				<ion-label position="floating">Name</ion-label>
+				<ion-input type="text" formControlName="name"></ion-input>
+			</ion-item>
 
 			<ion-item>
 				<ion-label position="floating">Mobile No.</ion-label>
@@ -58,9 +58,20 @@
 
 	</form>
 
+	<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+		<ion-fab-button *ngIf="profileForm.disabled;else savebtn;" (click)="onEdit()">
+				<ion-icon name="create"></ion-icon>
+		</ion-fab-button>
+		<ng-template #savebtn>
+			<ion-fab-button (click)="onSaveProfile()">
+					<ion-icon name="document"></ion-icon>
+			</ion-fab-button>
+		</ng-template>
+	</ion-fab>
+
 </ion-content>
 
-<ion-footer>
+<!-- <ion-footer>
 	<ion-toolbar>
 		<ion-grid>
 			<ion-row>
@@ -68,11 +79,11 @@
 					<ion-button expand="full" color="primary" (click)="onSaveProfile()">Update</ion-button>
 
 				</ion-col>
-				<!-- <ion-col>
+			  <ion-col>
 					<ion-button expand="full" color="primary" routerLink="/provider-services">Go to Services
 					</ion-button>
-				</ion-col> -->
+				</ion-col> 
 			</ion-row>
 		</ion-grid>
 	</ion-toolbar>
-</ion-footer>
+</ion-footer> -->
