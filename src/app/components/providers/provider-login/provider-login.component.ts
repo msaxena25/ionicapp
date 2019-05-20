@@ -21,7 +21,7 @@ export class ProviderLoginComponent implements OnInit {
 
   onLogin() {
     this.toastService.presentToast(AppMessage.U1004);
-    this.router.navigateByUrl('/provider-profile');
+    this.router.navigateByUrl('/provider-home');
 
 
   }

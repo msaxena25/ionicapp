@@ -19,7 +19,7 @@ export class ProviderProfileComponent implements OnInit {
         name: [],
         userName: ['', Validators.required],
         mobileNo: ['', Validators.required],
-        area: ['', Validators.required],
+   //    area: ['', Validators.required],
         city: ['', Validators.required],
         state: ['', Validators.required],
         country: ['', Validators.required]
@@ -34,7 +34,7 @@ export class ProviderProfileComponent implements OnInit {
       userName: 'msaxena25',
       name: 'Mohit Saxena',
       mobileNo: '987654321',
-      area: 'Indirapuram, Vaishali, Noida Sector 62',
+    // area: 'Indirapuram, Vaishali, Noida Sector 62',
       city: 'Ghaziabad',
       state: 'UP',
       country: 'India'
