@@ -18,6 +18,7 @@ import { ProviderListModule } from './components/providers/provider-list/provide
 import { ProviderSearchModule } from './components/users/provider-search/provider-search.module';
 import { AreaModule } from './components/providers/area/area.module';
 import { ProviderHomeModule } from './components/providers/provider-home/provider-home.module';
+import { ProviderFeedbackModule } from './components/providers/provider-feedback/provider-feedback.module';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { ProviderHomeModule } from './components/providers/provider-home/provide
     ProviderListModule,
     ProviderSearchModule,
     ProviderHomeModule,
+    ProviderFeedbackModule,
     AreaModule
   ],
   providers: [

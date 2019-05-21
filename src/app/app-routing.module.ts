@@ -38,6 +38,10 @@ const routes: Routes = [
     loadChildren: './components/providers/area/area.module#AreaModule'
   },
   {
+    path: 'provider-feedback',
+    loadChildren: './components/providers/provider-feedback/provider-feedback.module#ProviderFeedbackModule'
+  },
+  {
     path: 'home',
     loadChildren: './home/home.module#HomePageModule'
   },
