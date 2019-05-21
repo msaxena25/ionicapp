@@ -1,3 +1,79 @@
-<p>
-  user-register works!
-</p>
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>User Register</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">MobileNo.</ion-label>
+    <ion-input maxlength="10" type="text" [(ngModel)]="mobileNumber"></ion-input>
+  </ion-item>
+
+  <ion-item *ngIf="!isOTPSent;else inputotp">
+    <ion-button [disabled]="!mobileNumber" expand="full" color="primary" (click)="sendOTP()">Send OTP</ion-button>
+  </ion-item>
+
+  <ng-template #inputotp>
+    <ion-item *ngIf="isOTPSent">
+      <ion-input maxlength="10" type="text" placeholder="Enter OTP" [(ngModel)]="otp"></ion-input>
+    </ion-item>
+  </ng-template>
+
+
+  <ion-grid *ngIf="!otpVarified">
+    <ion-row>
+      <ion-col>
+        <ion-item *ngIf="isOTPSent">
+          <ion-button [disabled]="!otp || otp.length !== 4" expand="full" color="primary" (click)="varifyOTP()">Varify
+            OTP</ion-button>
+        </ion-item>
+
+      </ion-col>
+      <ion-col>
+        <ion-item *ngIf="isOTPSent">
+          <ion-button expand="full" color="primary" (click)="sendOTP()">Re-Send OTP</ion-button>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+
+  <div *ngIf="otpVarified">
+    <ion-item>
+      <ion-label position="floating">Password</ion-label>
+      <ion-input type="password"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Confirm Password</ion-label>
+      <ion-input type="password"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-button expand="full" color="primary" (click)="onRegister()">Register</ion-button>
+    </ion-item>
+  </div>
+
+
+</ion-content>
+
+<!-- <ion-footer>
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-button expand="full" color="primary" (click)="onLogin()">Register</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button expand="full" color="primary" routerLink="/user-login">Cancel
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer> -->

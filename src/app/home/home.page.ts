@@ -14,7 +14,7 @@ export class HomePage {
     this.storage.get('isUserLoggedIn').then((val) => {
       if(val) {
         console.log('User is logged In', val);
-        this.router.navigateByUrl('search')
+      //  this.router.navigateByUrl('search')
       }
       
     });

@@ -18,7 +18,7 @@ export class UserLoginComponent implements OnInit {
 
     // set a key/value
     this.storage.set('isUserLoggedIn', true);
-    this.router.navigateByUrl('search')
+    this.router.navigateByUrl('search');
 
   }
 

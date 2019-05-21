@@ -2,13 +2,22 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { ProviderLoginComponent } from './components/providers/provider-login/provider-login.component';
 import { UserLoginComponent } from './components/users/user-login/user-login.component';
+import { AuthGuard } from './core/auth.guard';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  {
+    path: 'home',
+    loadChildren: './home/home.module#HomePageModule'
+  },
 
   {
     path: 'user-login',
-    component: UserLoginComponent
+    component: UserLoginComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'user-register',
+    loadChildren: './components/users/user-register/user-register.module#UserRegisterModule'
   },
   {
     path: 'provider-login',
@@ -46,14 +55,17 @@ const routes: Routes = [
     path: 'provider-feedback',
     loadChildren: './components/providers/provider-feedback/provider-feedback.module#ProviderFeedbackModule'
   },
-  {
-    path: 'home',
-    loadChildren: './home/home.module#HomePageModule'
-  },
+  
   {
     path: 'list',
     loadChildren: './list/list.module#ListPageModule'
-  }
+  },
+
+  {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
+  },
 ];
 
 @NgModule({

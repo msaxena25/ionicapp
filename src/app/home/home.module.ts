@@ -3,6 +3,7 @@ import { RouterModule } from '@angular/router';
 
 import { HomePage } from './home.page';
 import { AppCommonModule } from '../shared/app-common/app-common.module';
+import { AuthGuard } from '../core/auth.guard';
 
 @NgModule({
   imports: [
@@ -10,7 +11,8 @@ import { AppCommonModule } from '../shared/app-common/app-common.module';
     RouterModule.forChild([
       {
         path: '',
-        component: HomePage
+        component: HomePage,
+        canActivate: [AuthGuard]
       }
     ])
   ],
