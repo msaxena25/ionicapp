@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastService } from 'src/app/shared/services/toast.service';
 import { AppMessage } from 'src/app/shared/app-message.enum';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-provider-profile',
@@ -12,7 +13,7 @@ export class ProviderProfileComponent implements OnInit {
   data: any = {};
   profileForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private toastService: ToastService) {
+  constructor(private formBuilder: FormBuilder, private toastService: ToastService, private router: Router) {
 
     this.profileForm = this.formBuilder.group(
       {
@@ -49,6 +50,10 @@ export class ProviderProfileComponent implements OnInit {
   }
   onEdit() {
     this.profileForm.enable();
+  }
+
+  onLogout(){
+    this.router.navigateByUrl('home');
   }
 
 }
