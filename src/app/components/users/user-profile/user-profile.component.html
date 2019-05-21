@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>My Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item>
+    {{data.name}}
+  </ion-item>
+  <ion-item>
+    {{data.mobileNo}}
+  </ion-item>
+
+  <ion-item>
+    {{data.address}}
+  </ion-item>
+
+</ion-content>
+
+<ion-footer>
+    <ion-button  color="primary" (click)="onSave()">Save</ion-button>
+    <ion-button slot="right" color="primary" (click)="onSignout()">Sign Out</ion-button>
+</ion-footer>

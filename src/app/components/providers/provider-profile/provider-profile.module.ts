@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { ProviderProfileComponent } from './provider-profile.component';
 import { RouterModule } from '@angular/router';
-import { IonicModule } from '@ionic/angular';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { ReactiveFormsModule } from '@angular/forms';
+import { AppCommonModule } from 'src/app/shared/app-common/app-common.module';
+
 const routes = [
   {
     path: '',
@@ -14,10 +15,8 @@ const routes = [
 @NgModule({
   declarations: [ProviderProfileComponent],
   imports: [
-    CommonModule,
+    AppCommonModule,
     ReactiveFormsModule,
-    IonicModule,
-    FormsModule,
     RouterModule.forChild(routes)
   ]
 })

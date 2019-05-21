@@ -47,4 +47,8 @@ export class ProviderSearchComponent implements OnInit {
       this.route.navigateByUrl('provider-list');
   }
 
+  openUserProfile(){
+    this.route.navigateByUrl('user-profile');
+  }
+
 }

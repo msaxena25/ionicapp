@@ -20,6 +20,10 @@ const routes: Routes = [
     loadChildren: './components/users/user-register/user-register.module#UserRegisterModule'
   },
   {
+    path: 'user-profile',
+    loadChildren: './components/users/user-profile/user-profile.module#UserProfileModule'
+  },
+  {
     path: 'provider-login',
     component: ProviderLoginComponent
   },
