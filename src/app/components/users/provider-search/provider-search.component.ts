@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { NativeGeocoder, NativeGeocoderOptions } from '@ionic-native/native-geocoder/ngx';
 import { Router } from '@angular/router';
+import { SharedService } from 'src/app/shared/services/shared.service';
 
 
 @Component({
@@ -11,13 +12,17 @@ import { Router } from '@angular/router';
 })
 export class ProviderSearchComponent implements OnInit {
   cordData : any ;
+  isUserLoggedIn: boolean = false;
+
   options: NativeGeocoderOptions = {
     useLocale: true,
     maxResults: 5
   }
 
   constructor(private geolocation: Geolocation, private nativeGeocoder: NativeGeocoder,
-    private route: Router) { }
+    private route: Router, private sService: SharedService) { 
+      this.isUserLoggedIn = this.sService.isUserLoggedIn;
+    }
 
   ngOnInit() {
     this.geolocation.getCurrentPosition().then((resp) => {

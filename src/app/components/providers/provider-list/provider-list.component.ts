@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { IonInfiniteScroll } from '@ionic/angular';
 import { Router } from '@angular/router';
+import { SharedService } from 'src/app/shared/services/shared.service';
 
 @Component({
   selector: 'app-provider-list',
@@ -11,8 +11,8 @@ export class ProviderListComponent implements OnInit {
   data: any = {};
   providerList: any;
 
-  constructor(private router: Router) { 
-    this.providerList = [1,2,3,4,5];
+  constructor(private router: Router, private sService: SharedService) {
+    this.providerList = [1, 2, 3, 4, 5];
   }
 
   ngOnInit() {
@@ -30,27 +30,28 @@ export class ProviderListComponent implements OnInit {
     setTimeout(() => {
       this.providerList.push(6);
       $event.target.complete();
-     // $event.target.disabled = true;
+      // $event.target.disabled = true;
     }, 2000);
 
   }
 
   onClickItem($event) {
-    
-    let el = this.getParentElement($event.target);
-    this.router.navigateByUrl('/provider-profile'); // need to create a new page for provider-portfolio
-    // play will el now we have id and we can item from provider list or we can hit request to get data
-
+    debugger;
+    if ($event.target.classList && !$event.target.classList.contains('phone-icon')) {
+      let el = this.getParentElement($event.target);
+      this.router.navigateByUrl('/provider-profile'); // need to create a new page for provider-portfolio
+      // play will el now we have id and we can item from provider list or we can hit request to get data
+    }
   }
 
-  
- // get parent element ion-item based on target element
-  getParentElement(el){
-    while(el.parentElement){
-        el =  el.parentElement;
-        if(el.tagName === 'ION-ITEM' && el.id) {
-            return el;
-        }
+
+  // get parent element ion-item based on target element
+  getParentElement(el) {
+    while (el.parentElement) {
+      el = el.parentElement;
+      if (el.tagName === 'ION-ITEM' && el.id) {
+        return el;
+      }
     }
   }
 
@@ -58,7 +59,14 @@ export class ProviderListComponent implements OnInit {
 
   }
 
-  doCall() {
+  doCall(item) {
+    debugger;
+    console.log(this.sService.isUserLoggedIn);
+    if (!this.sService.isUserLoggedIn) {
+        this.router.navigateByUrl('user-login');
+    } else {
+
+    }
 
   }
 

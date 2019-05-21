@@ -10,7 +10,7 @@
 <ion-content padding>
 
   <ion-list (click) = "onClickItem($event)" >
-    <ion-item id="list-{{num}}" *ngFor="let num of providerList">
+    <ion-item id="list-{{item}}" *ngFor="let item of providerList">
 
       <ion-grid>
         <ion-row>
@@ -22,7 +22,7 @@
           </ion-col>
           <ion-col>
             <ion-label>{{data.name}}</ion-label>
-            <ion-label>{{data.mobileNo}}</ion-label>
+            <!-- <ion-label>{{data.mobileNo}}</ion-label> -->
           </ion-col>
         </ion-row>
         <ion-row>
@@ -45,7 +45,7 @@
                 </div>
               </ion-col>
               <ion-col>
-                <ion-icon class="phone-icon" name="call" (click)="doCall()"></ion-icon>
+                <ion-icon class="phone-icon" name="call" (click)="doCall(item)"></ion-icon>
               </ion-col>
             </ion-row>
           </ion-col>
