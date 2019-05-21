@@ -1,10 +1,15 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { ProviderLoginComponent } from './components/providers/provider-login/provider-login.component';
+import { UserLoginComponent } from './components/users/user-login/user-login.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
 
+  {
+    path: 'user-login',
+    component: UserLoginComponent
+  },
   {
     path: 'provider-login',
     component: ProviderLoginComponent

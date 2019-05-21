@@ -19,10 +19,11 @@ import { ProviderSearchModule } from './components/users/provider-search/provide
 import { AreaModule } from './components/providers/area/area.module';
 import { ProviderHomeModule } from './components/providers/provider-home/provider-home.module';
 import { ProviderFeedbackModule } from './components/providers/provider-feedback/provider-feedback.module';
+import { UserLoginComponent } from './components/users/user-login/user-login.component';
 
 
 @NgModule({
-  declarations: [AppComponent, ProviderLoginComponent],
+  declarations: [AppComponent, ProviderLoginComponent, UserLoginComponent],
   entryComponents: [],
   imports: [
     BrowserModule,

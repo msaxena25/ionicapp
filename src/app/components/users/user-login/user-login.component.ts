@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Storage } from '@ionic/storage';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-login',
@@ -7,8 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserLoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(private storage: Storage, private router: Router) {}
 
-  ngOnInit() {}
+  ngOnInit() { }
+
+
+  onLogin() {
+
+    // set a key/value
+    this.storage.set('isUserLoggedIn', true);
+    this.router.navigateByUrl('search')
+
+  }
 
 }

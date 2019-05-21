@@ -1,16 +1,12 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
 
 import { HomePage } from './home.page';
+import { AppCommonModule } from '../shared/app-common/app-common.module';
 
 @NgModule({
   imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
+    AppCommonModule,
     RouterModule.forChild([
       {
         path: '',
@@ -20,4 +16,4 @@ import { HomePage } from './home.page';
   ],
   declarations: [HomePage]
 })
-export class HomePageModule {}
+export class HomePageModule { }

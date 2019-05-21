@@ -4,7 +4,7 @@ import { RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { RatingComponent } from '../components/rating/rating.component';
-
+import { IonicStorageModule } from '@ionic/storage';
 
 @NgModule({
   declarations: [RatingComponent],
@@ -12,7 +12,8 @@ import { RatingComponent } from '../components/rating/rating.component';
     CommonModule,
     RouterModule,
     IonicModule,
-    FormsModule
+    FormsModule,
+    IonicStorageModule.forRoot()
     
   ],
   exports:[
@@ -20,7 +21,8 @@ import { RatingComponent } from '../components/rating/rating.component';
     CommonModule,
     RouterModule,
     IonicModule,
-    FormsModule
+    FormsModule,
+    IonicStorageModule
   ]
 })
 export class AppCommonModule { }
