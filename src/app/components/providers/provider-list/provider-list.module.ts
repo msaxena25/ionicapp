@@ -10,7 +10,7 @@ const routes : Routes = [{
 }]
 
 @NgModule({
-  declarations: [ProviderListComponent, RatingComponent],
+  declarations: [ProviderListComponent],
   imports: [
     AppCommonModule,
     RouterModule.forChild(routes)

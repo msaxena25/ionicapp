@@ -15,7 +15,7 @@ const routes = [
   declarations: [ProviderProfileComponent],
   imports: [
     CommonModule,
-ReactiveFormsModule,
+    ReactiveFormsModule,
     IonicModule,
     FormsModule,
     RouterModule.forChild(routes)

@@ -3,10 +3,11 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
+import { RatingComponent } from '../components/rating/rating.component';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [RatingComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -15,6 +16,7 @@ import { FormsModule } from '@angular/forms';
     
   ],
   exports:[
+    RatingComponent,
     CommonModule,
     RouterModule,
     IonicModule,
