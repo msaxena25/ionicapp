@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, APP_INITIALIZER } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 
@@ -20,7 +20,11 @@ import { AreaModule } from './components/providers/area/area.module';
 import { ProviderHomeModule } from './components/providers/provider-home/provider-home.module';
 import { ProviderFeedbackModule } from './components/providers/provider-feedback/provider-feedback.module';
 import { UserLoginComponent } from './components/users/user-login/user-login.component';
+import { AppLoadService } from './shared/services/app-load.service';
 
+export function init_app(appLoadService: AppLoadService) {
+  return () => appLoadService.initializeApp();
+}
 
 @NgModule({
   declarations: [AppComponent, ProviderLoginComponent, UserLoginComponent],
@@ -42,8 +46,9 @@ import { UserLoginComponent } from './components/users/user-login/user-login.com
   providers: [
     StatusBar,
     SplashScreen,
+    { provide: APP_INITIALIZER, useFactory: init_app, deps: [AppLoadService], multi: true },
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
