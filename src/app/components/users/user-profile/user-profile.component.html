@@ -5,6 +5,7 @@
       <ion-back-button></ion-back-button>
     </ion-buttons>
     <ion-title>My Profile</ion-title>
+    <ion-icon class="edit-btn" slot="end" name="log-out" (click)="onSignout()"></ion-icon>
   </ion-toolbar>
 </ion-header>
 
@@ -24,6 +25,6 @@
 </ion-content>
 
 <ion-footer>
-    <ion-button  color="primary" (click)="onSave()">Save</ion-button>
-    <ion-button slot="right" color="primary" (click)="onSignout()">Sign Out</ion-button>
+  <ion-button expand="full" color="primary" (click)="onSave()">Save</ion-button>
+
 </ion-footer>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ToastService } from 'src/app/shared/services/toast.service';
 import { Storage } from '@ionic/storage';
 import { Router } from '@angular/router';
+import { SharedService } from 'src/app/shared/services/shared.service';
 
 @Component({
   selector: 'app-user-register',
@@ -15,7 +16,8 @@ export class UserRegisterComponent implements OnInit {
   otpVarified: boolean = false;
 
 
-  constructor(private toastService: ToastService, private storage: Storage, private router: Router) { }
+  constructor(private toastService: ToastService, private storage: Storage, private router: Router,
+    private sService: SharedService) { }
 
   ngOnInit() { }
 
@@ -41,6 +43,7 @@ export class UserRegisterComponent implements OnInit {
   onRegister() {
     this.toastService.presentToast('regitered');
     this.storage.set('isUserLoggedIn', true);
+    this.sService.isUserLoggedIn = true;
     this.router.navigateByUrl('search');
   }
 

@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Storage } from '@ionic/storage';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,16 +8,8 @@ import { Router } from '@angular/router';
 })
 export class HomePage {
 
-  constructor(private storage: Storage, private router: Router) {
-    // Or to get a key/value pair
-    this.storage.get('isUserLoggedIn').then((val) => {
-      if(val) {
-        console.log('User is logged In', val);
-      //  this.router.navigateByUrl('search')
-      }
-      
-    });
-
+  constructor(private router: Router) {
+    
   }
 
 
