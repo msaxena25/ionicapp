@@ -8,7 +8,7 @@ const routes = [
   {
     path: '',
     component: ProviderHomeComponent,
-    children: [
+    childrens: [
       {
         path: 'profile',
         loadChildren: './components/providers/provider-profile/provider-profile.module#ProviderProfileModule'
