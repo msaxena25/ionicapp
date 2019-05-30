@@ -22,6 +22,20 @@ import { ProviderFeedbackModule } from './components/providers/provider-feedback
 import { UserLoginComponent } from './components/users/user-login/user-login.component';
 import { AppLoadService } from './shared/services/app-load.service';
 
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { Firebase } from '@ionic-native/firebase/ngx';
+
+
+const config = {
+  apiKey: "AIzaSyBKfH273zngXN_fssYCaWK3fWfuS60DU4k",
+  authDomain: "goman-cb962.firebaseapp.com",
+  databaseURL: "https://goman-cb962.firebaseio.com",
+  projectId: "goman-cb962",
+  storageBucket: "goman-cb962.appspot.com",
+  messagingSenderId: "883967587196",
+};
+
 export function init_app(appLoadService: AppLoadService) {
   return () => appLoadService.initializeApp();
 }
@@ -41,13 +55,17 @@ export function init_app(appLoadService: AppLoadService) {
     ProviderSearchModule,
     ProviderHomeModule,
     ProviderFeedbackModule,
-    AreaModule
+    AreaModule,
+    AngularFireModule.initializeApp(config),
+    AngularFireModule,
+    AngularFirestoreModule
   ],
   providers: [
     StatusBar,
     SplashScreen,
     { provide: APP_INITIALIZER, useFactory: init_app, deps: [AppLoadService], multi: true },
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    Firebase
   ],
   bootstrap: [AppComponent]
 })

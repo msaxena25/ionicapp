@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "883967587196",
+    "firebase_url": "https://goman-cb962.firebaseio.com",
+    "project_id": "goman-cb962",
+    "storage_bucket": "goman-cb962.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:883967587196:android:9b92a63ff5c1b901",
+        "android_client_info": {
+          "package_name": "com.goman.gomanapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "883967587196-r66iikrisaur7c4c3c39b9bfjr0h1oqb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBC9huwG4SM2sKob4ho8WgBYNua0nDoAsM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "883967587196-r66iikrisaur7c4c3c39b9bfjr0h1oqb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
