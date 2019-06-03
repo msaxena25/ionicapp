@@ -1,6 +1,9 @@
 #Add Android platform
 ionic cordova platform add android
 
+#Check Plugin List
+ionic cordova plugin list
+
 #Build project
 ionic cordova build android
 
@@ -56,10 +59,19 @@ Failed to capture fingerprint of input files for task ':app:preDebugBuild' prope
 
 > This error occurred due to 'cordova-plugin-firebase' plugin issue. TO Check I remove this plugin:
 
+#ERROR
+Execution failed for task ':app:transformDexArchiveWithExternalLibsDexMergerForDebug'.
+> com.android.builder.dexing.DexArchiveMergerException: Error while merging dex archives:
+  Program type already present: android.support.v4.app.FrameMetricsAggregator
+
+android {
+    defaultConfig {
+        multiDexEnabled true   // have to add this config
+
+
 #TO remove plugin follow below steps:
 
 > ionic cordova platform remove android
 > ionic cordova plugin rm cordova-plugin-firebase --save  (--save this is much important to remove plugin from your solution)
-
 
 

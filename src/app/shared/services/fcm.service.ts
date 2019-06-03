@@ -16,8 +16,12 @@ export class FcmService {
     let token;
     alert(this.platform.is('android'));
     if (this.platform.is('android')) {
+     try{
       token = await this.firebase.getToken();
       alert(token);
+     }catch(err){
+        alert(err);
+     }
     }
 
     if (this.platform.is('ios')) {
