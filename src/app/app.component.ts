@@ -43,14 +43,7 @@ export class AppComponent {
 
   private notificationSetup() {
     this.fcm.getToken();
-    this.fcm.onNotifications().subscribe(
-      (msg) => {
-        if (this.platform.is('ios')) {
-          this.presentToast(msg.aps.alert);
-        } else {
-          this.presentToast(msg.body);
-        }
-      });
+    this.fcm.onNotifications();
   }
 
   initializeApp() {

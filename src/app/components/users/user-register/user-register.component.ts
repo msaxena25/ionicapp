@@ -4,6 +4,7 @@ import { Storage } from '@ionic/storage';
 import { Router } from '@angular/router';
 import { SharedService } from 'src/app/shared/services/shared.service';
 import { SMS } from '@ionic-native/sms/ngx';
+import { FcmService } from 'src/app/shared/services/fcm.service';
 
 
 @Component({
@@ -12,16 +13,19 @@ import { SMS } from '@ionic-native/sms/ngx';
   styleUrls: ['./user-register.component.scss'],
 })
 export class UserRegisterComponent implements OnInit {
-  mobileNumber: number;
+  mobileNumber: any;
   isOTPSent: boolean = false;
   otp: any;
   otpVarified: boolean = false;
 
 
   constructor(private toastService: ToastService, private storage: Storage, private router: Router,
-    private sService: SharedService, private sms: SMS) { }
+    private sService: SharedService, private sms: SMS, private fcmService : FcmService) { }
 
-  ngOnInit() { }
+  ngOnInit() { 
+
+    this.mobileNumber = this.fcmService.token; // for testing only
+  }
 
   sendOTP() {
     var val = Math.floor(1000 + Math.random() * 9000);
@@ -34,6 +38,8 @@ export class UserRegisterComponent implements OnInit {
           intent: '' // send SMS without opening any other app
         }
       };
+
+      this.sms.hasPermission()
     
       this.sms.send('9899131065', 'Welcome to my service. OTP is - ' + val, options)
         .then((response) => { alert('success' + response) }, (error) => { alert(error) });

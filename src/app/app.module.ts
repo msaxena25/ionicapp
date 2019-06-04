@@ -25,6 +25,8 @@ import { AppLoadService } from './shared/services/app-load.service';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { Firebase } from '@ionic-native/firebase/ngx';
+import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
+import { FCM } from '@ionic-native/fcm/ngx';
 
 
 const config = {
@@ -65,7 +67,9 @@ export function init_app(appLoadService: AppLoadService) {
     SplashScreen,
     { provide: APP_INITIALIZER, useFactory: init_app, deps: [AppLoadService], multi: true },
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    Firebase
+    Firebase,
+    AndroidPermissions,
+    FCM
   ],
   bootstrap: [AppComponent]
 })
