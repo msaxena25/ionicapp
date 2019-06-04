@@ -39,6 +39,16 @@ android_sdk_root=undefined (recommended setting)
 
 > set same path as android_home & close cmd and run it again. (Solved)
 
+
+#ERROR
+
+platforms\android\gradlew: Command failed with exit code 1 Error output:
+
+Failed to capture fingerprint of input files for task ':app:preDebugBuild' property 'compileManifests' during up-to-date check.
+
+> This error occurred due to 'cordova-plugin-firebase' plugin issue. TO Check I remove this plugin:
+
+
 issue with cordovaLib project > com.github.dcendents.android-maven  error 
 
 >need to change in build.gradle file of cordovaLib project. 
@@ -50,15 +60,6 @@ buildscript {
         jcenter()
 	mavenCentral()
     }
-
-#ERROR
-
-platforms\android\gradlew: Command failed with exit code 1 Error output:
-
-Failed to capture fingerprint of input files for task ':app:preDebugBuild' property 'compileManifests' during up-to-date check.
-
-> This error occurred due to 'cordova-plugin-firebase' plugin issue. TO Check I remove this plugin:
-
 #ERROR
 Execution failed for task ':app:transformDexArchiveWithExternalLibsDexMergerForDebug'.
 > com.android.builder.dexing.DexArchiveMergerException: Error while merging dex archives:
@@ -67,6 +68,11 @@ Execution failed for task ':app:transformDexArchiveWithExternalLibsDexMergerForD
 android {
     defaultConfig {
         multiDexEnabled true   // have to add this config
+
+#ERROR
+> Failed to apply plugin [id 'com.google.gms.google-services']
+   > For input string: "+"
+
 
 
 #TO remove plugin follow below steps:
